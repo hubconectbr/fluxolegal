@@ -589,3 +589,84 @@ body{
     }
 
 }
+
+/* ==========================================================
+   VÍDEO DE TRANSIÇÃO DO LOGIN
+========================================================== */
+
+.video-login-overlay{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    background:#000;
+    overflow:hidden;
+}
+
+/* Ativado pelo JavaScript */
+
+.video-login-overlay.active{
+    display:flex;
+}
+
+/* Vídeo */
+
+.video-login-overlay video{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    /* Transparência de 20% */
+    opacity:.20;
+}
+
+/* Mensagem sobre o vídeo */
+
+.video-message{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:10px;
+
+    padding:24px;
+
+    color:#FFF;
+    text-align:center;
+}
+
+.video-message strong{
+    font-size:32px;
+    font-weight:600;
+    line-height:1.2;
+}
+
+.video-message span{
+    font-size:16px;
+    color:rgba(255,255,255,.78);
+}
+
+/* Responsividade da mensagem */
+
+@media(max-width:768px){
+
+    .video-message strong{
+        font-size:25px;
+    }
+
+    .video-message span{
+        font-size:14px;
+    }
+
+}
