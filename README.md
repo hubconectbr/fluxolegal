@@ -20,3 +20,7 @@ Abra `index.html` no navegador ou publique a pasta em um servidor estático.
 ## Observação
 
 Dados, nomes, números, depoimentos, preços e processos são demonstrativos para a prototipagem.
+
+## Vídeo de entrada
+
+Copie o arquivo `fluxolegal_video.mp4` para `assets/video/fluxolegal_video.mp4`. Ao clicar em Entrar, ele será exibido em loop com 20% de opacidade antes do dashboard.
