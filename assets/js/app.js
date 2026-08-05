@@ -37,3 +37,18 @@ document.addEventListener('DOMContentLoaded',()=>{
   startCounters();
   simulateOnboarding();
 });
+
+function playLoginVideo(event){
+  event.preventDefault();
+  const overlay=document.getElementById('loginVideoOverlay');
+  const video=document.getElementById('loginVideo');
+  if(!overlay){window.location.href='dashboard.html';return;}
+  overlay.classList.add('active');
+  overlay.setAttribute('aria-hidden','false');
+  if(video){
+    video.currentTime=0;
+    const promise=video.play();
+    if(promise&&promise.catch)promise.catch(()=>{});
+  }
+  setTimeout(()=>{window.location.href='dashboard.html'},3200);
+}
