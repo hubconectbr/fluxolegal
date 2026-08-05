@@ -1,0 +1,11 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>API — FluxoLegal</title><link rel="stylesheet" href="assets/css/styles.css"></head><body><div class="app-shell"><aside class="sidebar"><div class="app-brand"><img src="assets/images/logo.png" alt="FluxoLegal"><span>FluxoLegal</span></div><nav class="side-nav"><a class="" href="dashboard.html">▦ <span>Visão geral</span></a><a class="" href="processos.html">◎ <span>Processos</span></a><a class="" href="movimentacoes.html">↻ <span>Movimentações</span></a><a class="active" href="api.html"></> <span>Integração API</span></a><a class="" href="conta.html">⚙ <span>Minha conta</span></a></nav><div class="side-user"><div class="avatar">MA</div><div class="meta"><b>Dra. Mariana</b><div class="small">OAB/DF 12345</div></div></div></aside><main class="app-main"><div class="topbar"><input class="search" placeholder="Buscar processo, cliente ou tribunal"><span class="badge badge-live">● Sincronização ativa</span></div><div class="app-content">
+<div class="page-head"><div><div class="eyebrow">Integração</div><h1>API FluxoLegal</h1><div class="muted">Disponibilize os dados ao sistema que você já utiliza.</div></div></div><div class="two"><div class="card panel"><h2>Endpoint demonstrativo</h2><div class="code">GET /v1/processes?oab=12345&amp;uf=DF
+
+{
+  "total": 1284,
+  "items": [{
+    "cnj": "0004187-32.2024.5.10.0002",
+    "court": "TRT-10",
+    "last_movement": "Conclusos para julgamento"
+  }]
+}</div></div><div class="card panel"><h2>Credenciais</h2><div class="field"><label>Token da API</label><input value="fl_live_••••••••••••"></div><div class="field"><label>URL do webhook</label><input value="https://sistema.exemplo.com/webhooks"></div></div></div></div></main></div><script src="assets/js/app.js"></script></body></html>
