@@ -38,29 +38,30 @@ document.addEventListener('DOMContentLoaded',()=>{
   simulateOnboarding();
 });
 
-async function playLoginVideo(event) {
+function playLoginVideo(event){
   event.preventDefault();
-
-  const overlay = document.getElementById('loginVideoOverlay');
-  const video = document.getElementById('loginVideo');
-
-  if (!overlay || !video) {
-    console.error('Overlay ou vídeo não encontrado.');
-    window.location.href = 'dashboard.html';
-    return;
-  }
-
+  const overlay=document.getElementById('loginVideoOverlay');
+  const video=document.getElementById('loginVideo');
+  if(!overlay){window.location.href='dashboard.html';return;}
   overlay.classList.add('active');
-  overlay.setAttribute('aria-hidden', 'false');
-
-  try {
-    video.currentTime = 0;
-    await video.play();
-  } catch (error) {
-    console.error('Erro ao reproduzir o vídeo:', error);
+  overlay.setAttribute('aria-hidden','false');
+  if(video){
+    video.currentTime=0;
+    const promise=video.play();
+    if(promise&&promise.catch)promise.catch(()=>{});
   }
+  setTimeout(()=>{window.location.href='dashboard.html'},3200);
+}
 
-  setTimeout(() => {
-    window.location.href = 'dashboard.html';
-  }, 5000);
+function registerLawyer(event){
+  event.preventDefault();
+  if(!window.FluxoLegalProcess){alert('Motor processual não carregado.');return;}
+  FluxoLegalProcess.saveProfile({
+    name:document.getElementById('signupName')?.value,
+    cpf:document.getElementById('signupCpf')?.value,
+    email:document.getElementById('signupEmail')?.value,
+    oab:document.getElementById('signupOab')?.value,
+    uf:document.getElementById('signupUf')?.value
+  });
+  window.location.href='onboarding.html';
 }
