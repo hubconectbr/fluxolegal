@@ -270,3 +270,9 @@ tbody tr:hover td{background:#faf8f7}.cnj{font-weight:650;font-size:13px}.small{
   .whatsapp-float{width:52px;height:52px;right:14px;bottom:14px}
   .login-profile img{width:84px;height:84px}
 }
+
+/* Integração processual CNJ */
+.sync-note{margin:12px 0;padding:12px 14px;border:1px solid var(--line,#e6e2df);border-radius:12px;background:#fff;font-size:13px;color:var(--muted,#6f7278)}
+.sync-note.error{border-color:#e8c5cc;color:#85052f;background:#fff8fa}.sync-note[hidden]{display:none!important}
+.loading-row{text-align:center;padding:28px;color:var(--muted,#6f7278)}
+.client-explain{margin-top:10px;padding:12px;border-radius:10px;background:#f7f5f4;font-size:13px;line-height:1.5}.client-explain b{color:#85052f}
